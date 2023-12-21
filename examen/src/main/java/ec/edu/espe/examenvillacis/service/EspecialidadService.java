@@ -22,11 +22,13 @@ public class EspecialidadService {
         try {
             return especialidadRepository.save(especialidad);
         } catch (Exception e) {
-            throw new RuntimeException("Error al crear la Especialidad: " + e.getMessage(), e);
+            throw new RuntimeException("Error al crear la especialidad: " + e.getMessage(), e);
         }
     }
 
-    public List<Especialidad> obtenerEspecialidadesPorNombre(String nombre) {
-        return especialidadRepository.findByNombreContaining(nombre);
+    public List<Especialidad> buscarEspecialidadesPorTipoYNombre(String tipoEspecialidad, String nombre) {
+        return especialidadRepository.findByTipoEspecialidadAndNombreLikeOrderByNombre(tipoEspecialidad,
+                "%" + nombre + "%");
     }
+
 }

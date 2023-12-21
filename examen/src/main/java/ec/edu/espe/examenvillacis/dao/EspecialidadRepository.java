@@ -12,6 +12,7 @@ public interface EspecialidadRepository extends CrudRepository<Especialidad, Str
 
     List<Especialidad> findByNombre(String nombre);
 
-    List<Especialidad> findByNombreContaining(String patronNombre);
+    List<Especialidad> findByTipoEspecialidadAndNombreLikeOrderByNombre(String tipoEspecialidad, String nombre);
 
+    boolean existsByCodigo(String codigo);
 }

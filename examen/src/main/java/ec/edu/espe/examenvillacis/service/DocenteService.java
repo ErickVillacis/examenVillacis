@@ -23,7 +23,6 @@ public class DocenteService {
     @Transactional
     public Docente crearDocente(Docente docente) {
         try {
-            // Validaciones
             if (especialidadRepository.existsByCodigo(docente.getCodigoEspecialidad())) {
                 Date fechaActual = new Date();
                 if (docente.getFechaIngreso().after(fechaActual)) {
