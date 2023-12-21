@@ -40,7 +40,7 @@ public class PlanificacionService {
             docenteMateria.setMateria(materia);
             docenteMateriaRepository.save(docenteMateria);
         } catch (Exception e) {
-            throw new RuntimeException("Error al asignar docente a materia: " + e.getMessage(), e);
+            throw new RuntimeException("Error al asignar docente a materia:  " + e.getMessage(), e);
         } 
     }
 }
